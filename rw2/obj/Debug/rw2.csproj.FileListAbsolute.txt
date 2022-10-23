@@ -1,0 +1,11 @@
+C:\PRG\CS\rw2\rw2\bin\Debug\rw2.exe.config
+C:\PRG\CS\rw2\rw2\bin\Debug\rw2.exe
+C:\PRG\CS\rw2\rw2\bin\Debug\rw2.pdb
+C:\PRG\CS\rw2\rw2\obj\Debug\rw2.csproj.AssemblyReference.cache
+C:\PRG\CS\rw2\rw2\obj\Debug\rw2.csproj.SuggestedBindingRedirects.cache
+C:\PRG\CS\rw2\rw2\obj\Debug\rw2.Form1.resources
+C:\PRG\CS\rw2\rw2\obj\Debug\rw2.Properties.Resources.resources
+C:\PRG\CS\rw2\rw2\obj\Debug\rw2.csproj.GenerateResource.cache
+C:\PRG\CS\rw2\rw2\obj\Debug\rw2.csproj.CoreCompileInputs.cache
+C:\PRG\CS\rw2\rw2\obj\Debug\rw2.exe
+C:\PRG\CS\rw2\rw2\obj\Debug\rw2.pdb

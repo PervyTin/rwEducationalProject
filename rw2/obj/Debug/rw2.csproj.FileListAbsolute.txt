@@ -9,3 +9,14 @@ C:\PRG\CS\rw2\rw2\obj\Debug\rw2.csproj.GenerateResource.cache
 C:\PRG\CS\rw2\rw2\obj\Debug\rw2.csproj.CoreCompileInputs.cache
 C:\PRG\CS\rw2\rw2\obj\Debug\rw2.exe
 C:\PRG\CS\rw2\rw2\obj\Debug\rw2.pdb
+C:\PRG\ransomwareKYB\rw2\bin\Debug\rw2.exe.config
+C:\PRG\ransomwareKYB\rw2\bin\Debug\rw2.exe
+C:\PRG\ransomwareKYB\rw2\bin\Debug\rw2.pdb
+C:\PRG\ransomwareKYB\rw2\obj\Debug\rw2.csproj.AssemblyReference.cache
+C:\PRG\ransomwareKYB\rw2\obj\Debug\rw2.csproj.SuggestedBindingRedirects.cache
+C:\PRG\ransomwareKYB\rw2\obj\Debug\rw2.Form1.resources
+C:\PRG\ransomwareKYB\rw2\obj\Debug\rw2.Properties.Resources.resources
+C:\PRG\ransomwareKYB\rw2\obj\Debug\rw2.csproj.GenerateResource.cache
+C:\PRG\ransomwareKYB\rw2\obj\Debug\rw2.csproj.CoreCompileInputs.cache
+C:\PRG\ransomwareKYB\rw2\obj\Debug\rw2.exe
+C:\PRG\ransomwareKYB\rw2\obj\Debug\rw2.pdb

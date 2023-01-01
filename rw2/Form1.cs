@@ -113,14 +113,14 @@ namespace rw2
             foreach (string file in fileNames)
             {
                 string password = getRandomString(20, 25);
-                string cryptedFilePosition = getCryptedString(password, file);
+                string cryptedFilePosition = getCryptedString(file);
                 try
                 {
                     File.Move(file, cryptedFilePosition);
                 } catch
                 {
                     password = getRandomString(20, 25);
-                    cryptedFilePosition = cryptedFilePosition = getCryptedString(password, file);
+                    cryptedFilePosition = cryptedFilePosition = getCryptedString(file);
                     File.Move(file, cryptedFilePosition);
                 }
                 filePathsAfter.Add(cryptedFilePosition);

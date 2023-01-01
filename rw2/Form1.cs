@@ -36,7 +36,7 @@ namespace rw2
             }
             return str;
         }
-        public char getCryptedCharacter(string password, char givenChar)
+        public char getCryptedCharacter(char givenChar)
         {
             if(givenChar == '.')
             {
@@ -44,16 +44,15 @@ namespace rw2
             }
             return alphabet[rnd.Next(0,alphabet.Length)];
         }
-        public string getCryptedString(string password, string str)
+        public string getCryptedString(string str)
         {
             string vys = string.Empty;
             foreach(char character in str)
             {
-                vys += getCryptedCharacter(password, character);
+                vys += getCryptedCharacter(character);
             }
             return vys;
         }
-         
         List<string> fileNames = new List<string>();
         List<string> filePathsBefore = new List<string>(); 
         List<string> filePathsAfter = new List<string>();  

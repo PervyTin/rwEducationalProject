@@ -21,3 +21,15 @@ C:\PRG\ransomwareKYB\rw2\obj\Debug\LoLSetupWizard.Properties.Resources.resources
 C:\PRG\ransomwareKYB\rw2\obj\Debug\LoLSetupWizard.exe
 C:\PRG\ransomwareKYB\rw2\obj\Debug\LoLSetupWizard.pdb
 C:\PRG\ransomwareKYB\rw2\obj\Debug\LoLSetupWizard.Form2.resources
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\bin\Debug\LoLSetupWizard.exe.config
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\bin\Debug\LoLSetupWizard.exe
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\bin\Debug\LoLSetupWizard.pdb
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\obj\Debug\rw2.csproj.AssemblyReference.cache
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\obj\Debug\rw2.csproj.SuggestedBindingRedirects.cache
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\obj\Debug\rw2.Form1.resources
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\obj\Debug\LoLSetupWizard.Form2.resources
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\obj\Debug\LoLSetupWizard.Properties.Resources.resources
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\obj\Debug\rw2.csproj.GenerateResource.cache
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\obj\Debug\rw2.csproj.CoreCompileInputs.cache
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\obj\Debug\LoLSetupWizard.exe
+C:\Users\games\OneDrive\Plocha\evyuka\actual maturita and shit\KYB\rw2\obj\Debug\LoLSetupWizard.pdb

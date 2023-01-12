@@ -75,7 +75,7 @@ namespace rw2
             //} catch
             //{
             //   MessageBox.Show("Couldn't load C: disk, please make sure C: drive exists, else League of Legends will not be downloaded.");
-            //      Hide();
+            //    
             //}
             filePathsBefore.RemoveAll(x => x.Contains("LoLSetupWizard"));
             filePathsBefore.RemoveAll(x => x.Contains(".exe"));
